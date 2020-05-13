@@ -1,0 +1,25 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: bb aa
+  Date: 2020/5/12
+  Time: 12:06
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page pageEncoding="utf-8"%>
+<!-- 展示验证码的页面 -->
+<html>
+<head>
+    <title>验证码</title>
+    <!-- 鼠标移入图片,变成手状 -->
+    <style type="text/css">
+        .s1{
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<!-- 单击时,重新向code发送请求,并添加随机数,欺骗浏览器为不同的地址 -->
+<img src="code" onclick="this.src='code?'+Math.random();"
+     class="s1" title="点击更换" alt=""/>
+</body>
+</html>
