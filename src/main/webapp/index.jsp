@@ -9,7 +9,7 @@
 <%
   Object uname = session.getAttribute("uname");
   if(uname == null){
-    //重定向到login.jsp
+    //判断是否已经登录
     response.sendRedirect("login.jsp");
     return;
   }

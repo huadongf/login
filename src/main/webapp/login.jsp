@@ -13,7 +13,6 @@
 %>
 <%=msg.toString() %>
 <%} %>
-<html>
 <head>
     <title>登录</title>
     <link rel="stylesheet" media="all" href="./css/ak.css" />
@@ -23,7 +22,7 @@
 <div class="sign">
     <div class="main">
         <div class="js-sign-in-container">
-            <form  action="/session/login.do" method="post" />
+            <form  action="login.do" method="post" />
                 <!-- 正常登录登录名输入框 -->
                 <div class="input-prepend restyle js-normal">
                     <input placeholder="用户名"  name="uname"  />

@@ -50,9 +50,8 @@ public class CodeServlet extends HttpServlet {
         String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789qwertyuiopasdfghjklzxcvbnm";
         StringBuilder number = new StringBuilder();
         Random r = new Random();
-        for(int i = 0; i< 5; i++){
+        for(int i = 0; i< 5; i++)
             number.append(str.charAt(r.nextInt(str.length())));
-        }
         return number.toString();
     }
 }
