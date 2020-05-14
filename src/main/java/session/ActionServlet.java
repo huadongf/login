@@ -23,9 +23,7 @@ public class ActionServlet extends HttpServlet {
         if (action.equals("login")) {
             String uname = request.getParameter("uname");
             String pwd = request.getParameter("pwd");
-            //获得用户提交的验证码字符
             String vcode = request.getParameter("vcode");
-            //获得session中存储的最新验证码字符
             String code = session.getAttribute("code").toString();
             if (code.equals(vcode))
             {
