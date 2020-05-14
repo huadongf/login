@@ -24,7 +24,7 @@
 
 <body>
 <h1>欢迎登录:<%=uname.toString() %></h1>
-<a href="index.jsp">退出</a>
+<a href="login.jsp">退出</a>
 </body>
 </html>
 
