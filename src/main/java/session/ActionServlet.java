@@ -32,22 +32,24 @@ public class ActionServlet extends HttpServlet {
             String vcode = request.getParameter("vcode");
             //获得session中存储的最新验证码字符
             String code = session.getAttribute("code").toString();
-            if (code.equals(vcode) &&uname.equals("123") && pwd.equals("123") ) {
+            if (code.equals(vcode))
+            {
+                if(uname.equals("123") && pwd.equals("123")) {
                 // 将登录的用户绑定到session
                 session.setAttribute("uname", uname);
-                // 重定向到index.jsp
-			//	response.sendRedirect("index.jsp");
-                //如果禁用了Cookie,使用URL重写
                 response.sendRedirect(response.encodeRedirectURL("index.jsp"));
-            } else {
+            }
+                else {
                 // 登录失败,就转发到login.jsp
-                request.setAttribute("msg", "输入有误,请重新登录!");
+                request.setAttribute("msg", "用户名或密码错误!");
                 request.getRequestDispatcher("login.jsp").forward(request,response);
             }
-        }else if(action.equals("logout")){
-            //使session失效
-            session.invalidate();
-            response.sendRedirect("login.jsp");
+            }
+            else
+            {
+                request.setAttribute("msg", "验证码错误!!");
+                request.getRequestDispatcher("login.jsp").forward(request,response);
+            }
         }
     }
 }

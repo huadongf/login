@@ -30,8 +30,6 @@ public class CodeServlet extends HttpServlet {
         String number = getNumber();
         //获得session
         HttpSession session = request.getSession();
-        //设置sesssion失效时间为30秒
-//		session.setMaxInactiveInterval(30);
         //将这5个随机字符绑定到session中
         session.setAttribute("code", number);
         g.setColor(new Color(0,0,0));
@@ -47,11 +45,9 @@ public class CodeServlet extends HttpServlet {
         OutputStream ops = response.getOutputStream();
         ImageIO.write(image,"jpg",ops);
         ops.close();
-
     }
-
     private String getNumber() {
-        String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789qwertyuiopasdfghjklzxcvbnm";
         StringBuilder number = new StringBuilder();
         Random r = new Random();
         for(int i = 0; i< 5; i++){

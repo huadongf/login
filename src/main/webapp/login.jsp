@@ -35,7 +35,7 @@
                 </div>
                 <input placeholder="验证码" name="vcode"  />
                 <img src="code" onclick="this.src='code?'+Math.random();"
-                     class="s1" title="点击更换"/><br/>
+                     class="s1" title="点击更换（验证码区分大小写)"/><br/>
                 <button class="sign-in-button" id="sign-in-form-submit-btn" type="submit">
                     <span id="sign-in-loading"></span>
                     登录
