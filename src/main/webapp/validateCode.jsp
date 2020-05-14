@@ -18,7 +18,6 @@
     </style>
 </head>
 <body>
-<!-- 单击时,重新向code发送请求,并添加随机数,欺骗浏览器为不同的地址 -->
 <img src="code" onclick="this.src='code?'+Math.random();"
      class="s1" title="点击更换" alt=""/>
 </body>

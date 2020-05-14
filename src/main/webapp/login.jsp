@@ -15,17 +15,32 @@
 <%} %>
 <html>
 <head>
-
+    <title>登录</title>
+    <link rel="stylesheet" media="all" href="./css/ak.css" />
+    <link rel="stylesheet" media="all" href="./css/ac.css" />
 </head>
-
-<body>
-<form action="login.do" method="post">
-    用户名:<input name="uname"/></br>
-    密码:<input name = "pwd" type="password"/> </br>
-    验证码:<input name="vcode"/>
-    <img src="code" onclick="this.src='code?'+Math.random();"
-         class="s1" title="点击更换"/><br/>
-    <input type="submit" value="登录"/>
-</form>
+<body class="no-padding reader-black-font" lang="zh-CN">
+<div class="sign">
+    <div class="main">
+        <div class="js-sign-in-container">
+            <form  action="/session/login.do" method="post" />
+                <!-- 正常登录登录名输入框 -->
+                <div class="input-prepend restyle js-normal">
+                    <input placeholder="用户名"  name="uname"  />
+                    <i class="iconfont ic-user"></i>
+                </div>
+                <div class="input-prepend">
+                    <input placeholder="密码" type="password" name="pwd"  />
+                    <i class="iconfont ic-password"></i>
+                </div>
+                <input placeholder="验证码" name="vcode"  />
+                <img src="code" onclick="this.src='code?'+Math.random();"
+                     class="s1" title="点击更换"/><br/>
+                <button class="sign-in-button" id="sign-in-form-submit-btn" type="submit">
+                    <span id="sign-in-loading"></span>
+                    登录
+                </button>
+        </div>
+    </div>
+</div>
 </body>
-</html>

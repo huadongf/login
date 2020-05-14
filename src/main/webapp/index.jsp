@@ -6,9 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page pageEncoding="utf-8"%>
-<!-- 登录成功后的页面 -->
 <%
-  //小脚本:session验证
   Object uname = session.getAttribute("uname");
   if(uname == null){
     //重定向到login.jsp
@@ -16,14 +14,11 @@
     return;
   }
 %>
-
 <html>
 <head>
-
   <title>欢迎光临</title></head>
-
 <body>
-<h1>欢迎登录:<%=uname.toString() %></h1>
+<h1>登录成功!:<%=uname.toString() %></h1>
 <a href="login.jsp">退出</a>
 </body>
 </html>

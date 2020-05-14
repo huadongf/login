@@ -36,9 +36,9 @@ public class ActionServlet extends HttpServlet {
                 // 将登录的用户绑定到session
                 session.setAttribute("uname", uname);
                 // 重定向到index.jsp
-				response.sendRedirect("index.jsp");
+			//	response.sendRedirect("index.jsp");
                 //如果禁用了Cookie,使用URL重写
-        //        response.sendRedirect(response.encodeRedirectURL("index.jsp"));
+                response.sendRedirect(response.encodeRedirectURL("index.jsp"));
             } else {
                 // 登录失败,就转发到login.jsp
                 request.setAttribute("msg", "输入有误,请重新登录!");
