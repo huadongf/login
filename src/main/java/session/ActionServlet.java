@@ -10,21 +10,16 @@ import java.io.IOException;
 public class ActionServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-        // 设置编码
         request.setCharacterEncoding("utf-8");
-        // 获得session
         HttpSession session = request.getSession();
-        // 获得请求路径
         String uri = request.getRequestURI();
         System.out.println(uri);
-        // 拆分路径,只保留login.do中的login
         String action;
         if(uri.lastIndexOf(".")!=-1)
         action = uri.substring(uri.lastIndexOf("/") + 1,uri.lastIndexOf("."));
         else
             action=uri.substring(uri.lastIndexOf("/")+1,uri.length()-1);
         System.out.println(action);
-        // 判断请求路径是否为登录
         if (action.equals("login")) {
             String uname = request.getParameter("uname");
             String pwd = request.getParameter("pwd");
