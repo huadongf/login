@@ -11,7 +11,7 @@ public class ActionServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession();//
         String uri = request.getRequestURI();
         System.out.println(uri);
         String action;
