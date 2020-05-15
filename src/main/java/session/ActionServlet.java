@@ -13,7 +13,6 @@ public class ActionServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         HttpSession session = request.getSession();//
         String uri = request.getRequestURI();
-        System.out.println(uri);
         String action;
         if(uri.lastIndexOf(".")!=-1)
         action = uri.substring(uri.lastIndexOf("/") + 1,uri.lastIndexOf("."));
